@@ -88,6 +88,22 @@ const routes: Routes = [
     path: 'subscription',
     loadChildren: () => import('./pages/subscription/subscription.module').then( m => m.SubscriptionPageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'chats',
+    loadChildren: () => import('./pages/chats/chats.module').then( m => m.ChatsPageModule)
+  },
+  {
+    path: 'team-chat',
+    loadChildren: () => import('./pages/team-chat/team-chat.module').then( m => m.TeamChatPageModule)
+  },
+  {
+    path: 'new-chat',
+    loadChildren: () => import('./pages/new-chat/new-chat.module').then( m => m.NewChatPageModule)
+  },
 ];
 
 @NgModule({

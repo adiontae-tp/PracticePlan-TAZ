@@ -6,6 +6,7 @@ import { HelperService } from 'src/app/services/helper.service';
 @Component({
   selector: 'tp-plan-list',
   template: `
+  <!-- TODO: [PPA-2] Update the design of teh plan-list card -->
     <div *ngIf="plans.length == 0" class="center">
       No Future Plans have been added to this Team
     </div>

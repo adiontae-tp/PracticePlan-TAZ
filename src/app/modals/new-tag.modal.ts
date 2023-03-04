@@ -9,7 +9,7 @@ import { ComponentsModule } from '../components/components/components.module';
   standalone: true,
   imports: [IonicModule, FormsModule, CommonModule, ComponentsModule],
   template: `
-    <tp-modal-header label="New Tag"></tp-modal-header>
+    <tp-modal-header title="New Tag"></tp-modal-header>
     <ion-content class="ion-padding">
       <tp-input label="Name" [(value)]="tag.name"></tp-input>
     </ion-content>

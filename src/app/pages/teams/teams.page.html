@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
   <ion-list lines="none">
     <ion-item class="card-item" [routerLink]="'/team/' + team.id " *ngFor="let team of teams">
       <ion-label> {{ team.name }}</ion-label>

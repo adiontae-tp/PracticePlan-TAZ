@@ -23,6 +23,8 @@ export class HelperService {
     private toastCtrl: ToastController
   ) {}
 
+
+
   showLoading(options: LoadingOptions = { duration: 10000 }) {
     this.loadingCtrl.create(options).then((l) => {
       l.present();

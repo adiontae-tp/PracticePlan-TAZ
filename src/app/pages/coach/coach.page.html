@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/coaches"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Assistant Coach</ion-title>
+    <ion-buttons slot="end">
+      <tp-delete-header-btn [item]="coach" *ngIf="!readonly"></tp-delete-header-btn>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class=" ion-padding">
+
+  <tp-input [readonly]="readonly" label="Email" [(value)]="coach.email"></tp-input>
+</ion-content>
+<tp-modal-footer [item]="coach" [(readonly)]="readonly"></tp-modal-footer>

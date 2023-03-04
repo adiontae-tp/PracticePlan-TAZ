@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="!id"></ion-menu-button>
+      <ion-back-button *ngIf="id" defaultHref="/teams"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Team</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <tp-input [readonly]="readonly" label="Name" [(value)]="team.name"></tp-input>
+
+    <ion-item [fill]="readonly ? 'solid' : 'outline'">
+      <ion-label position="floating">Sport</ion-label>
+      <ion-select [(ngModel)]="team.sport">
+        <ion-select-option [value]="sport" *ngFor="let sport of sports"> {{ sport }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button *ngIf="!readonly" (click)="save()" expand="block">Save</ion-button>
+  <ion-button *ngIf="readonly" (click)="readonly = false" expand="block">Edit</ion-button>
+  <ion-button *ngIf="readonly && user.team != team.id" fill="outline" (click)="selectTeam()" expand="block">Select Team</ion-button>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <tp-input label="First Name" [(value)]="user.fname"></tp-input>
+    <tp-input label="Last Name" [(value)]="user.lname"></tp-input>
+  </ion-list>
+  <ion-button expand="block" (click)="save()">Save</ion-button>
+
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/periods"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Period</ion-title>
+    <ion-buttons slot="end">
+      <tp-delete-header-btn *ngIf="!readonly" [item]="period" name="Period"></tp-delete-header-btn>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <tp-input [readonly]="readonly" label="Name" [(value)]="period.name"></tp-input>
+    <tp-input [readonly]="readonly" label="Duration" [(value)]="period.duration" type="number"></tp-input>
+    <ion-item style="margin-bottom: 10px;" [fill]="readonly ? 'solid' : 'outline'">
+      <ion-label position="floating">Tags</ion-label>
+      <ion-select multiple [(ngModel)]="period.tags">
+        <ion-select-option *ngFor=" let tag of tags" [value]="tag">
+          {{ tag}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item fill="outline">
+      <ion-textarea></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<tp-modal-footer [(readonly)]="readonly" [item]="period"></tp-modal-footer>

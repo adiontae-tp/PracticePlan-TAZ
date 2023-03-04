@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/plans"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <tp-ripple [readonly]="readonly" [id]="!readonly ? 'change-date' : '' ">
+        <span *ngIf="!readonly">
+          <ion-icon style="font-size: 25px;" name="create-outline"></ion-icon>
+        </span>
+        <span> {{ helper.dateFormat(plan) }}</span>
+      </tp-ripple>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="'/timer/' + plan.id">
+        <ion-icon name="timer-outline"></ion-icon>
+      </ion-button>
+      <tp-delete-header-btn *ngIf="!readonly" [item]="plan" name="Plan"></tp-delete-header-btn>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<tp-time-duration-banner [readonly]="readonly" [item]="plan"></tp-time-duration-banner>
+<ion-content>
+  <ion-modal trigger="change-date" [keepContentsMounted]="true" class="time-modal">
+    <ng-template>
+      <ion-datetime [value]="date" [showDefaultButtons]="true" (ionChange)="updateTime($event)"
+        presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+  <tp-activity-list (select)="select($event)" [readonly]="readonly" [plan]="plan"> </tp-activity-list>
+
+  <ion-fab *ngIf="readonly == false || !plan.id" slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="addPeriods()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+</ion-content>
+<tp-modal-footer [(readonly)]="readonly" [item]="plan"></tp-modal-footer>

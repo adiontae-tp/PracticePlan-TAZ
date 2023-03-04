@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Periods</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar placeholder="Find Periods"></ion-searchbar>
+
+  <ion-list lines="none">
+    <ion-item class="card-item" [routerLink]="'/period/' + period.id" *ngFor="let period of periods">
+      <ion-label>
+        <h2>{{ period.name }}</h2>
+        <p>{{ helper.getDuration(period.duration) }}</p>
+      </ion-label>
+      <div>
+        <span *ngFor="let tag of period.tags" class="tag"> {{ tag }}</span>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="newPeriod()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/plans"></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{ moment(plan.startTime, 'x').format('ddd MMM Do') }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div>
+  <tp-time-duration-banner [readonly]="true" [item]="plan"></tp-time-duration-banner>
+</div>
+<ion-content>
+  <tp-activity-timer [plan]="plan"></tp-activity-timer>
+
+</ion-content>

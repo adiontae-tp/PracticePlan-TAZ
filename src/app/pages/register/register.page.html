@@ -1,0 +1,13 @@
+<ion-content class="ion-padding">
+
+  <div>
+    <h2 class="logo-text">Practice Plan App</h2>
+    <tp-input type="text" [(value)]="fname" label="First Name"></tp-input>
+    <tp-input type="text" [(value)]="lname" label="Last Name"></tp-input>
+    <tp-input type="email" [(value)]="email" label="Email"></tp-input>
+    <tp-input type="password" [(value)]="password" label="Password"></tp-input>
+    <tp-button (click)="register()"> Create Account</tp-button>
+    <tp-button routerLink="/login" routerDirection="back" fill="clear" color="dark"> Already have an account? Sign In</tp-button>
+  </div>
+
+</ion-content>

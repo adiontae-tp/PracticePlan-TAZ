@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Plans</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="showAll = !showAll">
+        {{ showAll ? 'Next Plans' : 'All Plans'}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  
+
+  <tp-plan-list [plans]="plansFilter()" (select)="select($event)"></tp-plan-list>
+
+  <ion-fab horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="newPlan()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

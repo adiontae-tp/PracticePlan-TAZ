@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Template</ion-title>
+    <ion-buttons slot="end">
+      <tp-delete-header-btn [item]="template" *ngIf="!readonly"></tp-delete-header-btn>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<tp-duration-banner [item]="template"></tp-duration-banner>
+<ion-content class="ion-padding">
+  <tp-input label="Name" [(value)]="template.name" [readonly]="readonly"></tp-input>
+
+  <tp-activity-list [readonly]="readonly" [plan]="template" (select)="select($event)"></tp-activity-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="!readonly">
+    <ion-fab-button (click)="addPeriods()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<tp-modal-footer [item]="template" [(readonly)]="readonly"></tp-modal-footer>

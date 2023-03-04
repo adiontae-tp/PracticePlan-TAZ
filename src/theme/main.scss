@@ -1,0 +1,214 @@
+@import "@fontsource/inter";
+
+.input-fill-solid,
+.item-fill-solid,
+.select-fill-solid,
+.textarea-fill-solid {
+  background: transparent !important;
+  --background: transparent !important;
+  pointer-events: none;
+  border: none !important;
+  border-color: none !important;
+  --border-color: none !important;
+}
+
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.tag {
+  color: var(--ion-color-primary-contrast);
+  font-size: 12px;
+  margin-right: 2px;
+  padding: 2px 5px;
+  background-color: var(--ion-color-primary);
+}
+
+ion-item,
+ion-input,
+ion-select,
+ion-textarea {
+  --highlight-color-focused: var(--ion-color-primary) !important;
+  --highlight-color-invalid: var(--ion-color-primary) !important;
+  --highlight-color-valid: var(--ion-color-primary) !important;
+}
+
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+ion-list {
+  background: transparent !important;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.notes-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+ion-header {
+  --background: var(--ion-color-primary);
+  background: var(--ion-color-primary);
+}
+
+ion-content {
+  background: #f1f4f8 !important;
+  --background: #f1f4f8 !important;
+}
+
+ion-item-divider {
+  // background: var(--ion-color-light);
+  // color: #333;
+  // font-size: 16px;
+  background: none !important;
+  color: #777777;
+  font-weight: bold;
+}
+
+// .item-input {
+//   margin: 5px 10px;
+//   border-radius: 5px;
+//   background: transparent !important;
+//   --background: transparent !important;
+//   border-bottom: 2px solid var(--ion-color-light);
+// }
+
+.flex-row-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.banner {
+  background: white;
+  border-bottom: 1px solid var(--ion-color-light);
+  color: #333;
+  font-size: 16px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-font {
+  font-family: "Bebas Neue", cursive;
+  font-size: 40px;
+  text-align: center;
+}
+
+.card-item {
+  h2 {
+    font-weight: 500;
+    color: #333;
+  }
+
+  border: 2px solid var(--ion-color-light);
+  padding: 5px 2px;
+  margin: 10px;
+  border-radius: 5px;
+  min-height: 65px;
+  position: relative;
+  overflow: hidden;
+  background: white !important;
+  // min-height: 100px;
+}
+
+.top-container {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+
+.bottom-container {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.ql-toolbar {
+  margin-top: 15px;
+  border-radius: 3px 3px 0px 0px;
+  border-bottom: 0px;
+}
+
+.ql-snow .ql-tooltip {
+  left: 0px !important;
+}
+
+.ql-container {
+  border-top: 0px;
+  margin-bottom: 5px;
+  border-radius: 0px 0px 3px 3px;
+  min-height: 200px;
+}
+
+// The editor needs to be the same size as the container
+.ql-editor {
+  min-height: 400px;
+}
+
+.ql-editor p,
+.ql-editor::placeholder {
+  font-size: 16px;
+}
+
+.tag {
+  color: var(--ion-color-primary-contrast);
+  font-size: 12px;
+  margin-right: 2px;
+  padding: 2px 5px;
+  background-color: var(--ion-color-primary);
+}
+
+.helper-text {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+}
+
+// PDF STLYES
+.pdf {
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    padding: 5px 0px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  * {
+    outline: none;
+  }
+}
+
+// END PDF STLYES

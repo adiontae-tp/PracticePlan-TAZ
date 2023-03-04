@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tags"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tag</ion-title>
+    <ion-buttons slot="end">
+      <tp-delete-header-btn [item]="tag" *ngIf="!readonly"></tp-delete-header-btn>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <tp-input [(value)]="tag.name" label="Name" [readonly]="readonly"></tp-input>
+</ion-content>
+<tp-modal-footer [item]="tag" [(readonly)]="readonly"></tp-modal-footer>

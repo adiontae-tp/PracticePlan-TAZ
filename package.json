@@ -24,8 +24,11 @@
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
-    "@ionic/angular": "^6.1.9",
+    "@fontsource/inter": "^4.5.15",
+    "@ionic/angular": "^6.5.6",
+    "firebase": "^9.17.1",
     "ionicons": "^6.0.3",
+    "moment": "^2.29.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

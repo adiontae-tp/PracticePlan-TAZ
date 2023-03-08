@@ -22,9 +22,10 @@
         </ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item fill="outline">
-      <ion-textarea></ion-textarea>
-    </ion-item>
+ 
+
+    <quill-editor [(ngModel)]="period.notes" placeholder="Enter notes here" style="width: 100%;"> </quill-editor>
+
   </ion-list>
 </ion-content>
 <tp-modal-footer [(readonly)]="readonly" [item]="period"></tp-modal-footer>

@@ -153,7 +153,7 @@ export class HelperService {
   dayTime(obj: { startTime: number; endTime: number }) {
     var start = this.getTime(obj.startTime);
     var end = this.getTime(obj.endTime);
-    return moment(obj.startTime, 'x').format('dddd MMM Do');
+    return moment(obj.startTime, 'x').format('dddd MMMM Do');
   }
   startEndTime(obj: { startTime: number; endTime: number }) {
     var start = this.getTime(obj.startTime);

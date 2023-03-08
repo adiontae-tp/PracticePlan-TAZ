@@ -12,7 +12,7 @@
       </tp-ripple>
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button [routerLink]="'/timer/' + plan.id">
+      <ion-button *ngIf="readonly" [routerLink]="'/timer/' + plan.id">
         <ion-icon name="timer-outline"></ion-icon>
       </ion-button>
       <tp-delete-header-btn *ngIf="!readonly" [item]="plan" name="Plan"></tp-delete-header-btn>
@@ -22,6 +22,7 @@
 
 <tp-time-duration-banner [readonly]="readonly" [item]="plan"></tp-time-duration-banner>
 <ion-content>
+
   <ion-modal trigger="change-date" [keepContentsMounted]="true" class="time-modal">
     <ng-template>
       <ion-datetime [value]="date" [showDefaultButtons]="true" (ionChange)="updateTime($event)"
@@ -30,6 +31,11 @@
   </ion-modal>
   <tp-activity-list (select)="select($event)" [readonly]="readonly" [plan]="plan"> </tp-activity-list>
 
+
+
+  <div style="text-align: center;" *ngIf="plan.activities.length == 0 && !readonly">
+    <ion-button (click)="selectTemplate()" fill="outline">Use Template</ion-button>
+  </div>
   <ion-fab *ngIf="readonly == false || !plan.id" slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button (click)="addPeriods()">
       <ion-icon name="add"></ion-icon>

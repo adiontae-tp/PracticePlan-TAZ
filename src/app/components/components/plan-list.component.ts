@@ -6,7 +6,7 @@ import { HelperService } from 'src/app/services/helper.service';
 @Component({
   selector: 'tp-plan-list',
   template: `
-  <!-- TODO: [PPA-2] Update the design of teh plan-list card -->
+    <!-- TODO: [PPA-2] Update the design of teh plan-list card -->
     <div *ngIf="plans.length == 0" class="center">
       No Future Plans have been added to this Team
     </div>
@@ -23,6 +23,18 @@ import { HelperService } from 'src/app/services/helper.service';
             <h2>{{ helper.dayTime(plan) }}</h2>
             <p>{{ helper.startEndDuration(plan) }}</p>
           </ion-label>
+          <ion-thumbnail slot="end">
+            <div class="px-2 inline-block border rounded">
+              <div class="text-center">
+                <span class="text-gray-400">
+                  {{ moment(plan.startTime, 'x').format('MMM') }}
+                </span>
+                <span class="text-gray-400">
+                  {{ moment(plan.startTime, 'x').format('Do') }}
+                </span>
+              </div>
+            </div>
+          </ion-thumbnail>
         </ion-item>
       </div>
     </ion-list>

@@ -6,6 +6,7 @@ import { Plan } from 'src/app/classes/plan';
 import { ActivityModal } from 'src/app/modals/activity.modal';
 import { AddPeriodsModal } from 'src/app/modals/add-periods.modal';
 import { NewPlanModal } from 'src/app/modals/new-plan.modal';
+import { SelectTemplateModal } from 'src/app/modals/select-template.modal';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { HelperService } from 'src/app/services/helper.service';
 import { StoreService } from 'src/app/services/store.service';
@@ -57,6 +58,13 @@ export class PlanPage implements OnInit {
     });
   }
 
+  selectTemplate() {
+    this.helper.showModal(SelectTemplateModal).then((template: any) => {
+      this.plan.activities = template.activities;
+      this.helper.updateDurationTimes(this.plan);
+      this.readonly = false
+    });
+  }
   updateTime(event: any) {
     var time = event.target.value;
     this.plan.startTime = parseInt(moment(time).format('x'));

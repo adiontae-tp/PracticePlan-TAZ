@@ -22,7 +22,7 @@ import { DurationBannerComponent } from './duration-banner.component';
 import { CoachListComponent } from './coach-list.component';
 import { ItemDividerComponent } from './item-divider.component';
 import { ActivityTimerComponent } from './activity-timer.component';
-
+import { CalendarComponent } from './calendar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { ActivityTimerComponent } from './activity-timer.component';
     PlanListComponent,
     CoachListComponent,
     ModalHeaderComponent,
-
+    CalendarComponent,
     ItemDividerComponent,
     SelectComponent,
     ModalComponent,
@@ -57,6 +57,7 @@ import { ActivityTimerComponent } from './activity-timer.component';
     ItemDividerComponent,
     ActivityTimerComponent,
 
+    CalendarComponent,
 
     SelectComponent,
     ModalFooterCommponent,

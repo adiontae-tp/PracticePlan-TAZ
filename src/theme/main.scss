@@ -1,4 +1,11 @@
+@import '~quill/dist/quill.snow.css';
+
 @import "@fontsource/inter";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 .input-fill-solid,
 .item-fill-solid,
@@ -153,6 +160,10 @@ ion-item-divider {
 
 .ql-snow .ql-tooltip {
   left: 0px !important;
+}
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .ql-container {
